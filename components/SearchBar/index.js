@@ -4,7 +4,7 @@ import styles from './styles.scss';
 function SearchBar() {
   return (
     <div className='search-bar'>
-      SearchBar.
+      Copy Bon Appetite Search Bar.
     </div>
   )
 };
