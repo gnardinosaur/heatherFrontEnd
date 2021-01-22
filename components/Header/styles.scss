@@ -1,0 +1,31 @@
+@mixin mobile {
+  @media (max-width: 414px) {
+    @content;
+  }
+}
+
+.header {
+  position: fixed;
+  // top: 0; --> is this needed when scrolling comes into play?
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 0 3%
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10%
+}
+
+h4 {
+  @include mobile {
+    display: none
+  }
+}
