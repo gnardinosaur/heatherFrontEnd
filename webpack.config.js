@@ -10,19 +10,25 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/, 
+        test: /\.(js|jsx)$/, 
         exclude: /node_modules/, 
         use: {
-          loader: "babel-loader" 
+          loader: 'babel-loader' 
         }
       },
       { 
-        test: /\.s[ac]ss$/i, 
+        test: /\.s[ac]ss$/i,
+        // exclude: /\.global.scss$/, // is a separate build for the global.scss file needed? 
         use: [
-          'style-loader', 
-          'css-loader',
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
           'sass-loader'
-        ] 
+        ]
       }
     ]
   },
