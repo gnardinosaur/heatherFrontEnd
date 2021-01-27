@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.global.scss';
 import Header from './components/Header';
 

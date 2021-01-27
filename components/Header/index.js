@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './styles.scss';
-import { Search } from 'react-feather';
+// import classnames from 'classnames';
+import { Search } from 'react-feather'; //icons
 import SearchBar from '../SearchBar';
-
 
 function Header() {
 
@@ -14,12 +14,11 @@ function Header() {
 
   return (
     <div>
-      <div className='header'>
+      <div className={styles.header}>
         <div>navHam.</div>
         <h2>recipes.</h2>
-        <div className='header-right'>
+        <div className={styles.headerRight}>
           <h4>SIGN IN</h4>
-          {/* how style search icon --> https://github.com/feathericons/react-feather */}
           <Search onClick={handleAddSearch} /> 
         </div>
       </div> 
