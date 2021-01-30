@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './styles.scss';
-// import classnames from 'classnames';
 import { Search } from 'react-feather'; //icons
 import SearchBar from '../SearchBar';
 
@@ -23,7 +22,8 @@ function Header() {
         </div>
       </div> 
       <div>
-        {addSearchBar ? <SearchBar /> : <div></div>}
+        {/* {addSearchBar ? <SearchBar /> : <div></div>} */}
+        <SearchBar show={addSearchBar} />
       </div>
     </div>
   )
