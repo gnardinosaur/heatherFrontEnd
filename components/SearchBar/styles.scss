@@ -4,12 +4,8 @@
   }
 }
 
-.hide {
-  height: 0;
-  transition: 0.8s;
-}
-
-.show {
+.searchBar {
+  transform: translate(0,-100%);
   position: relative;
   background-color: #ffe9ec;
   top: 60px;
@@ -17,9 +13,15 @@
   height: 150px;
   padding-top: 8%;
   text-align: center;
-  transition: 0.4s;
+  transition: transform 0.4s;
+
+  &.show {
+    transform: translate(0,0);
+  }
 
   @include mobile {
     height: 80px
   }
+
 }
+
