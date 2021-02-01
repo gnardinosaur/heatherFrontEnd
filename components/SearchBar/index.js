@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './styles.scss';
+import classnames from 'classnames';
 
 function SearchBar(props) {
 
   return (
-    <div className={props.show ? styles.show : styles.hide}>
-      Copy Bon Appetite Search Bar.
+    <div className={classnames(
+      styles.searchBar,
+      props.show && styles.show
+    )}>
+    Copy Bon Appetite Search Bar.
     </div>
   )
 };
