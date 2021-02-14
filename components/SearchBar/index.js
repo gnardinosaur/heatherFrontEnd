@@ -9,7 +9,12 @@ function SearchBar(props) {
       styles.searchBar,
       props.show && styles.show
     )}>
-    Copy Bon Appetite Search Bar.
+      <div className={styles.inputWrap}>
+        <form> 
+          <input type='text' placeholder='what are you looking for?' className={styles.input}></input>
+          <input type='submit' value='search.' className={styles.btn}></input>
+        </form>
+      </div>
     </div>
   )
 };

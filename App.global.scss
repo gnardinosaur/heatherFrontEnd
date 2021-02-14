@@ -1,9 +1,12 @@
-html {
-  box-sizing: border-box
-}
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 *, *:before, *:after {
-  box-sizing: inherit
+  box-sizing: inherit;
+  font-family: 'Barlow', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 body {
