@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
 @mixin mobile {
   @media (max-width: 414px) {
     @content;
@@ -16,6 +18,10 @@
   width: 100%;
   padding: 0 3%;
   z-index: 2;
+
+  h1, h4 {
+    font-family: 'Ranchers';
+  }
 }
 
 .headerRight {

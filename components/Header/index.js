@@ -12,17 +12,16 @@ function Header() {
   };
 
   return (
-    <div>
+    <div className={styles.conatiner}>
       <div className={styles.header}>
         <div>navHam.</div>
-        <h2>recipes.</h2>
+        <h1>recipes.</h1>
         <div className={styles.headerRight}>
           <h4>SIGN IN</h4>
           <Search onClick={handleAddSearch} /> 
         </div>
       </div> 
       <div>
-        {/* {addSearchBar ? <SearchBar /> : <div></div>} */}
         <SearchBar show={addSearchBar} />
       </div>
     </div>
