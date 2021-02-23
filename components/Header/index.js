@@ -2,27 +2,35 @@ import React, { useState } from 'react';
 import styles from './styles.scss';
 import { Search } from 'react-feather'; //icons
 import SearchBar from '../SearchBar';
+import SignInModal from '../SignInModal';
 
 function Header() {
+  const [openSignInModal, setOpenSignInModal] = useState(false);
+  const [openSearchBar, setOpenSearchBar] = useState(false);
 
-  const [addSearchBar, setAddSearchBar] = useState(false)
-
-  function handleAddSearch() {
-    setAddSearchBar(!addSearchBar)
+  function handleOpenSignInModal() {
+    setOpenSignInModal(!openSignInModal)
+  };
+  
+  function handleOpenSearch() {
+    setOpenSearchBar(!openSearchBar)
   };
 
   return (
-    <div className={styles.conatiner}>
+    <div>
       <div className={styles.header}>
         <div>navHam.</div>
         <h1>recipes.</h1>
         <div className={styles.headerRight}>
-          <h4>SIGN IN</h4>
-          <Search onClick={handleAddSearch} /> 
+          <h4 onClick={handleOpenSignInModal}>SIGN IN</h4>
+          <Search onClick={handleOpenSearch} /> 
         </div>
       </div> 
       <div>
-        <SearchBar show={addSearchBar} />
+        <SearchBar show={openSearchBar} />
+      </div>
+      <div>
+        <SignInModal show={openSignInModal} />
       </div>
     </div>
   )
