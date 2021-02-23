@@ -32,7 +32,12 @@
 }
 
 h4 {
+  cursor: pointer;
   @include mobile {
     display: none
   }
+}
+
+svg {
+  cursor: pointer;
 }
