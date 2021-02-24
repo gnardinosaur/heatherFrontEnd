@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.scss';
+import styles from './SearchBar.module.scss';
 import classnames from 'classnames';
 
 function SearchBar(props) {

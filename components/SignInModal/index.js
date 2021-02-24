@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.scss';
+import styles from './SignInModal.module.scss';
 import classnames from 'classnames';
 
 function SignInModal(props) {

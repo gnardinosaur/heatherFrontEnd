@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './styles.scss';
+import styles from './Header.module.scss';
 import { Search } from 'react-feather'; //icons
 import SearchBar from '../SearchBar';
 import SignInModal from '../SignInModal';
