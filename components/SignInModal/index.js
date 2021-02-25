@@ -1,19 +1,21 @@
 import React from 'react';
-import styles from './SignInModal.module.scss';
-import classnames from 'classnames';
+import styles from './styles.scss';
+import cn from 'classnames';
 
 function SignInModal(props) {
 
   return (
-    <div className={classnames(
+    <div className={cn(
       styles.modal,
       props.show && styles.show
       )}> 
-      <form>
-        <input type='text' name='username' placeholder='username'></input>
-        <input type='password' name='pw' placeholder='password'></input>
-        <input type='submit' value='sign in.'></input>
-      </form>
+      <div>
+        <form>
+          <input type='text' name='username' placeholder='username'></input>
+          <input type='password' name='pw' placeholder='password'></input>
+          <input type='submit' value='sign in.'></input>
+        </form>
+      </div>
     </div>
   )
 };
