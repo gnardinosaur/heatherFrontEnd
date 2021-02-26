@@ -5,6 +5,7 @@ import SearchBar from '../SearchBar';
 import SignInModal from '../SignInModal';
 
 function Header() {
+  // make 1 state object with logic so that only one modal is open at a time (will be true for the nav hamburger as well)
   const [openSignInModal, setOpenSignInModal] = useState(false);
   const [openSearchBar, setOpenSearchBar] = useState(false);
 
