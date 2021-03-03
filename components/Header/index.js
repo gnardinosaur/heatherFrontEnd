@@ -5,17 +5,17 @@ import SearchBar from '../SearchBar';
 import SignInModal from '../SignInModal';
 
 function Header() {
-  // make 1 state object with logic so that only one modal is open at a time (will be true for the nav hamburger as well)
-  const [openSignInModal, setOpenSignInModal] = useState(false);
-  const [openSearchBar, setOpenSearchBar] = useState(false);
+  const [modals, setModals] = useState({
+    signIn: false,
+    searchBar: false
+  });
 
-  function handleOpenSignInModal() {
-    setOpenSignInModal(!openSignInModal)
-  };
-  
-  function handleOpenSearch() {
-    setOpenSearchBar(!openSearchBar)
-  };
+  function toggleModals(e) {
+    setModals({
+      ...modals,
+      [e.target.id]: !modals[e.target.id]
+    });
+  }
 
   return (
     <div>
@@ -23,15 +23,15 @@ function Header() {
         <div>navHam.</div>
         <h1>recipes.</h1>
         <div className={styles.headerRight}>
-          <h4 onClick={handleOpenSignInModal}>SIGN IN</h4>
-          <Search onClick={handleOpenSearch} /> 
+          <h4 id='signIn' onClick={toggleModals}>SIGN IN</h4>
+          <Search id='searchBar' onClick={toggleModals} /> 
         </div>
       </div> 
       <div>
-        <SearchBar show={openSearchBar} />
+        <SearchBar show={modals.searchBar} />
       </div>
       <div>
-        <SignInModal show={openSignInModal} />
+        <SignInModal show={modals.signIn} />
       </div>
     </div>
   )
