@@ -11,11 +11,12 @@ function Header() {
   });
 
   function toggleModals(e) {
-    setModals({
-      ...modals,
-      [e.target.id]: !modals[e.target.id]
-    });
-  }
+    let newM = {...modals}
+    for (let k in newM) {
+      k === e.target.id ? newM[k] = !newM[k] : newM[k] = false;
+    }
+    setModals(newM)
+  };
 
   return (
     <div>
