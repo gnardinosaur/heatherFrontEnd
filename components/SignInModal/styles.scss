@@ -27,6 +27,10 @@
     font-size: 125%;
   }
 
+  input:not([type=button]) {
+    padding-left: 3%
+  }
+
   &.show {
     display: block;
   }
@@ -39,8 +43,21 @@
   align-items: center;
 }
 
+.firstName {
+  display: none;
+  
+  & .show {
+    display: inherit;
+  }
+}
+
 .btn {
   background: black;
   color: whitesmoke;
+  cursor: pointer;
+}
+
+h3 {
+  text-decoration: underline;
   cursor: pointer;
 }
