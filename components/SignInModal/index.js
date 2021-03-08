@@ -6,23 +6,25 @@ function SignInModal(props) {
   const [nameInput, setNameInput] = useState(false);
   
   function addNameInput() {
-    setNameInput(true)
+    setNameInput(!nameInput)
   }
-
-  console.log(nameInput)
   
   return (
     <div className={cn(
       styles.modal,
-      props.show && styles.show
+      props.show && styles.show,
+      nameInput && styles.createAccount
       )}> 
       <div className={styles.formContainer}>
         <form>
-          <input type='text' name='firstname' placeholder='firstname' className={cn(styles.firstName, nameInput && styles.show)}></input>
-          <input type='text' name='username' placeholder='username'></input>
+          <input type='text' name='email' placeholder='yourname@email.com'></input>
           <input type='password' name='pw' placeholder='password'></input>
-          <input type='submit' value='sign in.' className={styles.btn}></input>
-          <h3 onClick={addNameInput}>Create New Account</h3>
+          <input type='text' name='firstname' placeholder='firstname' className={cn(
+            styles.firstName, 
+            nameInput && styles.show)}>
+          </input>
+          <input type='submit' value={nameInput ? 'create account.' : 'sign in.'} className={styles.btn}></input>
+          <h3 onClick={addNameInput}><em>{nameInput ? 'Sign In To Existing Account' : 'Create New Account'}</em></h3>
         </form>
       </div>
     </div>

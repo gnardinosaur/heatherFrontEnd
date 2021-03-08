@@ -3,11 +3,14 @@ import styles from './styles.scss';
 import { Search } from 'react-feather'; //icons
 import SearchBar from '../SearchBar';
 import SignInModal from '../SignInModal';
+import Drawer from '../Drawer';
+import Hamburger from '../Hamburger';
 
 function Header() {
   const [modals, setModals] = useState({
     signIn: false,
-    searchBar: false
+    searchBar: false,
+    drawer: false
   });
 
   function toggleModals(e) {
@@ -21,13 +24,16 @@ function Header() {
   return (
     <div>
       <div className={styles.header}>
-        <div>navHam.</div>
+        <Hamburger id='drawer' onClick={toggleModals}/>
         <h1>recipes.</h1>
         <div className={styles.headerRight}>
           <h4 id='signIn' onClick={toggleModals}>SIGN IN</h4>
           <Search id='searchBar' onClick={toggleModals} /> 
         </div>
       </div> 
+      <div>
+        <Drawer show={modals.drawer} />
+      </div>
       <div>
         <SearchBar show={modals.searchBar} />
       </div>
