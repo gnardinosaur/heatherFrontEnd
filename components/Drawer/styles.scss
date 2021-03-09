@@ -12,3 +12,14 @@
     transform: translate(0,0);
   }
 }
+
+.linksContainer {
+  padding: 10%;
+  text-transform: uppercase;
+
+  h2 {
+    margin-bottom: 10%;
+    cursor: pointer;
+    font-weight: 600;
+  }
+}
