@@ -4,8 +4,10 @@ import cn from 'classnames';
 
 function Hamburger(props) {
 
+  console.log(props)
+
   return (
-    <div className={styles.hamburger} >
+    <div id='drawer' className={styles.hamburger} onClick={props.toggleModals}>
       <div className={cn(
         styles.bar,
         styles.one,

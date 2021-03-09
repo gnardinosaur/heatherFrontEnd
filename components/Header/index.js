@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './styles.scss';
 import { Search } from 'react-feather'; //icons
+import Hamburger from '../Hamburger';
 import SearchBar from '../SearchBar';
 import SignInModal from '../SignInModal';
 import Drawer from '../Drawer';
-import Hamburger from '../Hamburger';
 
 function Header() {
   const [modals, setModals] = useState({
@@ -14,6 +14,7 @@ function Header() {
   });
 
   function toggleModals(e) {
+    console.log(e.target.id)
     let newM = {...modals}
     for (let k in newM) {
       k === e.target.id ? newM[k] = !newM[k] : newM[k] = false;
@@ -24,7 +25,7 @@ function Header() {
   return (
     <div>
       <div className={styles.header}>
-        <Hamburger id='drawer' onClick={toggleModals}/>
+        <Hamburger toggleModals={toggleModals} showX={modals.drawer} />
         <h1>recipes.</h1>
         <div className={styles.headerRight}>
           <h4 id='signIn' onClick={toggleModals}>SIGN IN</h4>
