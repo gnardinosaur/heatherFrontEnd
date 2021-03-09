@@ -1,5 +1,6 @@
 .hamburger {
   display: inline-block;
+  cursor: pointer;
   
   .bar {
     width: 35px;
@@ -12,7 +13,7 @@
     &.showX {
       
       &.one {
-        transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-8px, 7px);
       }
       
       &.two {
@@ -20,7 +21,7 @@
       }
     
       &.three {
-        transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-6px, -6px);
       }
     }
   }
