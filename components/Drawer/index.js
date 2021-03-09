@@ -9,6 +9,13 @@ function Drawer(props) {
       styles.drawer,
       props.show && styles.show
     )}>
+      <div className={styles.linksContainer}>
+        <h2>Create Recipe.</h2>
+        <hr></hr>
+        <h2>Your Recipes.</h2>
+        <hr></hr>
+        <h2 id='signIn' onClick={props.toggleModals}>Sign In.</h2>
+      </div>
     </div>
   )
 }

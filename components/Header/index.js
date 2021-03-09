@@ -14,7 +14,6 @@ function Header() {
   });
 
   function toggleModals(e) {
-    console.log(e.target.id)
     let newM = {...modals}
     for (let k in newM) {
       k === e.target.id ? newM[k] = !newM[k] : newM[k] = false;
@@ -25,7 +24,7 @@ function Header() {
   return (
     <div>
       <div className={styles.header}>
-        <Hamburger toggleModals={toggleModals} showX={modals.drawer} />
+        <Hamburger toggleModals={toggleModals} showX={modals.drawer} /> 
         <h1>recipes.</h1>
         <div className={styles.headerRight}>
           <h4 id='signIn' onClick={toggleModals}>SIGN IN</h4>
@@ -33,7 +32,7 @@ function Header() {
         </div>
       </div> 
       <div>
-        <Drawer show={modals.drawer} />
+        <Drawer show={modals.drawer} toggleModals={toggleModals}/>
       </div>
       <div>
         <SearchBar show={modals.searchBar} />
