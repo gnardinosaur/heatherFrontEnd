@@ -38,7 +38,7 @@ function Header() {
         <SearchBar show={modals.searchBar} />
       </div>
       <div>
-        <SignInModal show={modals.signIn} />
+        <SignInModal show={modals.signIn} toggleModals={toggleModals} />
       </div>
     </div>
   )

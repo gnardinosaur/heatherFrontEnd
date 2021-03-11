@@ -1,3 +1,5 @@
+$transition-time: 0.5s;
+
 @mixin mobile {
   @media (max-width: 414px) {
     @content;
@@ -8,7 +10,7 @@
   display: none;
   margin: auto;
   height: 300px;
-  transition: height 0.3s;
+  transition: height $transition-time;
   width: 50%;
   background-color: #ffe9ec;
   justify-content: center;
@@ -17,12 +19,13 @@
   box-shadow: 2px 10px 10px rgb(0, 0, 0, 0.2);
 
   &.createAccount {
-    transition: height 0.3s;
+    transition: height $transition-time;
     height: 400px;
   }
 
   form {
     width: 75%;
+    margin-top: 5%;
   }
   
   input {
@@ -40,31 +43,58 @@
   &.show {
     display: block;
   }
+
+  @include mobile {
+    width: 85%;
+  }
 }
 
 .formContainer {
+  position: relative;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-// make this transition smoother, works for now but isn't great
-.firstName {
-  display: none;
-
-  &.show {
-    display: inherit;
+  svg {
+    position: absolute;
+    top: 15px;
+    left: 15px;
   }
 }
 
+// this <input> is going to change opacity at the same speed that the submit button slides down to reveal it
+.firstName {
+  opacity: 0;
+  transition: $transition-time;
+
+  &.show {
+    opacity: 1;
+    transition: $transition-time;
+  }
+}
+
+// this button is going to slide down to reveal the firstName input
 .btn {
   background: black;
   color: whitesmoke;
   cursor: pointer;
+  transform: translate(0, -120%);
+  transition: transform $transition-time;
+
+  &.slide {
+    transform: translate(0,0);
+  }
 }
 
 h3 {
+  margin-top: -10%;
   text-decoration: underline;
   cursor: pointer;
+  transition: margin-top $transition-time;
+  
+  &.slide {
+    margin-top: 3%;
+    transition: margin-top $transition-time;
+  }
 }
