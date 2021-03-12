@@ -6,21 +6,27 @@ function Hamburger(props) {
 
   return (
     <div id='drawer' className={styles.hamburger} onClick={props.toggleModals}>
-      <div className={cn(
+      <div id='drawer' className={cn(
         styles.bar,
         styles.one,
         props.showX && styles.showX
-      )}></div>
-      <div className={cn(
+      )}
+        onClick={props.toggleModals}>
+      </div>
+      <div id='drawer' className={cn(
         styles.bar,
         styles.two,
         props.showX && styles.showX
-      )}></div>
-      <div className={cn(
+      )}
+        onClick={props.toggleModals}>
+      </div>
+      <div id='drawer' className={cn(
         styles.bar,
         styles.three,
         props.showX && styles.showX
-      )}></div>
+      )}
+      onClick={props.toggleModals}>
+      </div>
     </div>
   )
 }

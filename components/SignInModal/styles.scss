@@ -8,12 +8,16 @@ $transition-time: 0.5s;
 
 .modal {
   display: none;
-  margin: auto;
+  //overlay styles
+  z-index: 1;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  //
   height: 300px;
   transition: height $transition-time;
   width: 50%;
   background-color: #ffe9ec;
-  justify-content: center;
   text-align: center;
   border: 1px solid black;
   box-shadow: 2px 10px 10px rgb(0, 0, 0, 0.2);
@@ -26,6 +30,19 @@ $transition-time: 0.5s;
   form {
     width: 75%;
     margin-top: 5%;
+
+    // styling for create account/sign-in text inside form; needs to keep margins consistent through slide-up/down transition
+    h3 {
+      margin-top: -10%;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: margin-top $transition-time;
+      
+      &.slide {
+        margin-top: 3%;
+        transition: margin-top $transition-time;
+      }
+    }
   }
   
   input {
@@ -45,7 +62,9 @@ $transition-time: 0.5s;
   }
 
   @include mobile {
+    // size & center overlay for mobile
     width: 85%;
+    left: 8%;
   }
 }
 
@@ -84,17 +103,5 @@ $transition-time: 0.5s;
 
   &.slide {
     transform: translate(0,0);
-  }
-}
-
-h3 {
-  margin-top: -10%;
-  text-decoration: underline;
-  cursor: pointer;
-  transition: margin-top $transition-time;
-  
-  &.slide {
-    margin-top: 3%;
-    transition: margin-top $transition-time;
   }
 }
