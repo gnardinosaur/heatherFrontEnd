@@ -20,7 +20,7 @@
   padding: 0 3%;
   z-index: 2;
 
-  h1, h4 {
+  h1 {
     font-family: 'Ranchers';
   }
 }
@@ -29,13 +29,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 10%
-}
+  width: 10%;
 
-h4 {
-  cursor: pointer;
-  @include mobile {
-    display: none
+  h3 {
+    font-family: 'Ranchers';
+    cursor: pointer;
+    @include mobile {
+      display: none
+    }
   }
 }
 

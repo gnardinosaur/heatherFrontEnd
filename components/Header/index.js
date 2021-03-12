@@ -25,9 +25,9 @@ function Header() {
     <div>
       <div className={styles.header}>
         <Hamburger toggleModals={toggleModals} showX={modals.drawer} /> 
-        <h1>recipes.</h1>
+        <h1>STAY COOKIN'</h1>
         <div className={styles.headerRight}>
-          <h4 id='signIn' onClick={toggleModals}>SIGN IN</h4>
+          <h3 id='signIn' onClick={toggleModals}>SIGN IN</h3>
           <Search id='searchBar' onClick={toggleModals} /> 
         </div>
       </div> 

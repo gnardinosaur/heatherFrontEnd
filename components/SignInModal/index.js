@@ -19,13 +19,13 @@ function SignInModal(props) {
       <div className={styles.formContainer}>
         <X id='signIn' onClick={props.toggleModals} />
         <form>
-          <input type='text' name='email' placeholder='email'></input>
-          <input type='password' name='pw' placeholder='password'></input>
-          <input type='text' name='firstname' placeholder='firstname' className={cn(
+          <input type='text' name='email' placeholder='EMAIL'></input>
+          <input type='password' name='pw' placeholder='PASSWORD'></input>
+          <input type='text' name='firstname' placeholder='FIRST NAME' className={cn(
             styles.firstName, 
             nameInput && styles.show)}>
           </input>
-          <input type='submit' value={nameInput ? 'create account.' : 'sign in.'} className={cn(
+          <input type='submit' value={nameInput ? 'CREATE ACCOUNT' : 'SIGN IN'} className={cn(
             styles.btn,
             nameInput && styles.slide
             )}>

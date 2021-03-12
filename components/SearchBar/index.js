@@ -11,8 +11,8 @@ function SearchBar(props) {
     )}>
       <div className={styles.inputWrap}>
         <form className={styles.sim}> 
-          <input type='text' placeholder='what are you looking for?' className={styles.searchInput}></input>
-          <input type='submit' value='search' className={styles.btn}></input>
+          <input type='text' placeholder='What are you looking for?' className={styles.searchInput}></input>
+          <input type='submit' value='SEARCH' className={styles.btn}></input>
         </form>
       </div>
     </div>
